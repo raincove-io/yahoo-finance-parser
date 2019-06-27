@@ -2,6 +2,7 @@ package com.erfangc.equity.valuation.yahoo
 
 import com.erfangc.equity.valuation.yahoo.financials.FinancialsRetriever
 import com.erfangc.equity.valuation.yahoo.summary.SummaryRetriever
+import io.github.erfangc.raincove.sdk.models.Company
 import java.time.Instant
 
 class YahooFinanceRetriever {
@@ -11,9 +12,20 @@ class YahooFinanceRetriever {
         val financialsRetriever = FinancialsRetriever()
         val summary = summaryRetriever.retrieveSummary(ticker)
         val financials = financialsRetriever.retrieveFinancials(ticker)
+        val company = Company().apply {
+            this.country = "US"
+            this.id = summary.ticker
+            this.idType = "ticker"
+            this.sector = summary.sector
+            this.industry = summary.industry
+            this.description = summary.name
+            this.ticker = summary.ticker
+            this.createdBy = System.getProperty("user.name")
+            this.createdOn = Instant.now().toString()
+        }
         return YahooFinance(
             ticker = ticker,
-            summary = summary,
+            company = company,
             financials = financials,
             lastUpdated = Instant.now()
         )
