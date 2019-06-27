@@ -7,4 +7,8 @@ fun main() {
     val fs = RaincoveSdk.financialStatements()
     val response = fs.getFinancialStatements("MSFT")
     println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response))
+
+    val companies = RaincoveSdk.companies()
+    val msft = companies.getCompany("MSFT")
+    println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(msft))
 }

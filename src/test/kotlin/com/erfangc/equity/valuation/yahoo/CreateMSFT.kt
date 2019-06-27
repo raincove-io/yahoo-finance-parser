@@ -8,8 +8,14 @@ fun main() {
     val msft = retriever.retrieve("MSFT")
     println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(msft))
     RaincoveSdk.setBaseUrl("http://localhost:8080")
+
     val fs = RaincoveSdk.financialStatements()
-    val request = CreateFinancialStatementsRequest()
-    request.financialStatements = msft.financials
+    val companies = RaincoveSdk.companies()
+
+    val request = CreateFinancialStatementsRequest().apply {
+        financialStatements = msft.financials
+    }
     fs.createFinancialStatements(request, "MSFT")
+
+    companies.createCompany(msft.company)
 }
