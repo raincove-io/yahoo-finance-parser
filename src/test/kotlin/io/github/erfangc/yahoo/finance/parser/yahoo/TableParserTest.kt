@@ -40,7 +40,7 @@ class TableParserTest {
         val datedContent = TableParser().parseTableWithColumnsAsDates(table)
         val latest = datedContent.latest()
         assertEquals(2, latest.size)
-        assertEquals(2.4, latest.getValue("Metric1"))
-        assertEquals(166.0, latest.getValue("Metric2"))
+        assertEquals(2.4, latest.getValue("metric1"))
+        assertEquals(166.0, latest.getValue("metric2"))
     }
 }
