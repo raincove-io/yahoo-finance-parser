@@ -8,6 +8,9 @@ import io.github.erfangc.raincove.sdk.models.CreateFinancialStatementsRequest
 import io.github.erfangc.yahoo.finance.parser.yahoo.YahooFinanceRetriever
 import org.slf4j.LoggerFactory
 
+class YahooFinanceParser : CliktCommand(name = "yahoo-finance-parser") {
+    override fun run() = Unit
+}
 
 class RunTicker : CliktCommand() {
 
@@ -33,8 +36,4 @@ class RunTicker : CliktCommand() {
         logger.info("Created company {} to {}", ticker, endpoint)
     }
 
-}
-
-class App : CliktCommand() {
-    override fun run() = Unit
 }
