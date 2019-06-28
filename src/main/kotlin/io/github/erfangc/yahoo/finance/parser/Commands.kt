@@ -1,13 +1,13 @@
 package io.github.erfangc.yahoo.finance.parser
 
 import com.github.ajalt.clikt.core.CliktCommand
-import com.github.ajalt.clikt.core.subcommands
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.options.option
 import io.github.erfangc.raincove.sdk.apis.RaincoveSdk
 import io.github.erfangc.raincove.sdk.models.CreateFinancialStatementsRequest
 import io.github.erfangc.yahoo.finance.parser.yahoo.YahooFinanceRetriever
 import org.slf4j.LoggerFactory
+
 
 class RunTicker : CliktCommand() {
 
@@ -35,8 +35,6 @@ class RunTicker : CliktCommand() {
 
 }
 
-class App: CliktCommand() {
+class App : CliktCommand() {
     override fun run() = Unit
 }
-
-fun main(args: Array<String>) = App().subcommands(RunTicker()).main(args)

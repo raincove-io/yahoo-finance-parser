@@ -1,4 +1,5 @@
 .idea
 build/
+.gradle
 yahoo-finance-retriever.iml
 target
