@@ -3,4 +3,5 @@ build/
 .gradle
 out
 yahoo-finance-retriever.iml
+yahoo-finance-retriever-0.1.0-SNAPSHOT
 target
