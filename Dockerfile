@@ -1,4 +1,4 @@
-FROM 5.4.1-jdk8 as builder
+FROM gradle:5.4.1-jdk8 as builder
 COPY . /app
 WORKDIR /app
 RUN gradle build
