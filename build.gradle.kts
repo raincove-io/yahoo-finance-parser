@@ -3,7 +3,7 @@
  */
 
 plugins {
-    id("org.jetbrains.kotlin.jvm").version("1.3.10")
+    kotlin("jvm").version("1.3.40")
     application
 }
 
@@ -14,7 +14,6 @@ repositories {
 
 dependencies {
     implementation("org.apache.commons:commons-csv:1.5")
-    implementation("org.elasticsearch.client:elasticsearch-rest-high-level-client:6.5.4")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.8")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.8")
