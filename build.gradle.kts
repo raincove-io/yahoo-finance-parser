@@ -23,7 +23,6 @@ dependencies {
     implementation("us.codecraft:xsoup:0.3.1")
     implementation("org.jsoup:jsoup:1.11.3")
     implementation("io.github.erfangc:raincove-sdk:0.2.0")
-    implementation("org.apache.httpcomponents:httpclient:4.5.6")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.3.21")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.3.21")
     testImplementation("junit:junit:4.12")
