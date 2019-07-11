@@ -1,8 +1,8 @@
 package io.github.erfangc.yahoo.finance.parser.yahoo
 
+import io.github.erfangc.raincove.sdk.models.Company
 import io.github.erfangc.yahoo.finance.parser.yahoo.financials.FinancialsRetriever
 import io.github.erfangc.yahoo.finance.parser.yahoo.summary.SummaryRetriever
-import io.github.erfangc.raincove.sdk.models.Company
 import java.time.Instant
 
 class YahooFinanceRetriever {
@@ -15,19 +15,21 @@ class YahooFinanceRetriever {
         val company = Company().apply {
             this.country = "US"
             this.id = summary.ticker
-            this.idType = "ticker"
+            this.idType = "ticker" // TODO use a assetId generator service
             this.sector = summary.sector
             this.industry = summary.industry
             this.description = summary.name
             this.ticker = summary.ticker
+            this.marketCap = summary.marketCap
+            this.previousClose = summary.previousClose
             this.createdBy = System.getProperty("user.name")
             this.createdOn = Instant.now().toString()
         }
         return YahooFinance(
-            ticker = ticker,
-            company = company,
-            financials = financials,
-            lastUpdated = Instant.now()
+                ticker = ticker,
+                company = company,
+                financials = financials,
+                lastUpdated = Instant.now()
         )
     }
 
