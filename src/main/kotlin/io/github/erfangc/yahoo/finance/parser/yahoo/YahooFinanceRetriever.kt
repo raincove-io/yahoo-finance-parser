@@ -15,6 +15,7 @@ class YahooFinanceRetriever {
         val company = Company().apply {
             this.country = "US"
             this.id = summary.ticker
+            this.beta3YMonthly = summary.beta3YMonthly
             this.idType = "ticker" // TODO use a assetId generator service
             this.sector = summary.sector
             this.industry = summary.industry
